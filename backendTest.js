@@ -10,6 +10,10 @@ app.get("/:uuid", function (req, res) {
   else res.status(400).send(`Отсутствует элемент с uuid = ${req.params.uuid}`)
 })
 
+app.get("/", function (req, res) {
+    res.send(store)
+})
+
 app.post("/", function (req, res) {
   let body = req.body
   let entry = {
